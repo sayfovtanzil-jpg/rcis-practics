@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блоки по ширине экрана</title>
+    <style>
+        /* Базовые стили */
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        /* Контейнер для каждого ряда блоков */
+        .row {
+            display: grid;
+            gap: 10px;                /* отступы между блоками внутри ряда */
+            margin-bottom: 20px;       /* отступ между рядами */
+        }
+
+        /* Оформление блоков */
+        .block {
+            background-color: #bbdefb;
+            border: 1px solid #1976d2;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* ---- Ряд 1: два блока по 50% ---- */
+        .row-1 {
+            grid-template-columns: 1fr 1fr;   /* два равных столбца */
+        }
+
+        /* ---- Ряд 2: шесть блоков равной ширины (по ~16.66%) ---- */
+        .row-2 {
+            grid-template-columns: repeat(6, 1fr);   /* шесть равных долей */
+        }
+
+        /* ---- Ряд 3: два блока по 25% и три блока, делящие остальные 50% поровну ---- */
+        .row-3 {
+            grid-template-columns: 25% 25% 1fr 1fr 1fr; /* первые два – точные 25%, остальные – гибкие */
+        }
+
+        /* Адаптация для узких экранов (чтобы блоки не сжимались слишком сильно) */
+        @media (max-width: 600px) {
+            .row-2 {
+                grid-template-columns: repeat(3, 1fr);  /* по три блока в строке */
+            }
+            .row-3 {
+                grid-template-columns: 1fr 1fr;         /* блоки занимают по 50%, остальные переносятся */
+            }
+            /* При желании можно дополнительно управлять переносом, но для примера оставим так */
+        }
+        #you{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Первый ряд: два блока по 50% -->
+    <div class="row row-1">
+        <div class="block">Блок 1 (50%)</div>
+        <div class="block">Блок 2 (50%)</div>
+    </div>
+
+    <!-- Второй ряд: шесть блоков равной ширины -->
+    <div  class="row row-2">
+        <div id="you" class="block">Блок 1</div>
+        <div class="block">Блок 2</div>
+        <div class="block">Блок 3</div>
+        <div class="block">Блок 4</div>
+        <div class="block">Блок 5</div>
+        <div class="block">Блок 6</div>
+    </div>
+
+    <!-- Третий ряд: два блока по 25% и три блока, делящие оставшиеся 50% поровну -->
+    <div class="row row-3">
+        <div class="block">Блок 1 (25%)</div>
+        <div class="block">Блок 2 (25%)</div>
+        <div class="block">Блок 3 (≈16.66%)</div>
+        <div class="block">Блок 4 (≈16.66%)</div>
+        <div class="block">Блок 5 (≈16.66%)</div>
+    </div>
+</body>
+</html>

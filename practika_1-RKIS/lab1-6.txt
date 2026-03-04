@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая 6</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 5px;
+          background-color: #ece3d1;
+        }
+        h1{
+            text-align: center;
+            font-family: ;
+            color:black;
+        }
+      .table-second{
+            width: 60%;
+            margin:0 auto;
+        border-collapse: collapse;
+        border: 2px solid rgb(251, 3, 3);
+        background-color: #879bdd;
+            padding: 12px;
+            text-align: left;
+            width: 100%;
+
+        }
+        .first{
+           background-color: rgb(255, 255, 0);
+        }
+        .second{
+             background-color: rgb(87, 87, 212);
+        }
+        .table-box{
+            display: flex;
+            align-items: stretch;
+            gap: 20px;
+        }
+        .left{
+            width: 30%;
+        }
+        caption{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Практическая 6</h1> 
+<div class="table-box">
+<div>
+    <table class="my-table" cellspacing="5">
+    <caption>Таблица 1</caption>       
+        <tr>
+            <td class="first"  colspan="2">1x1</td>
+            <td class="second" rowspan="2">1x2</td>
+        </tr>
+        <tr>
+            <td class="second" >2x1</td>
+            <td class="first" >2x2</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <table class="my-table" cellspasing="0">
+        <caption>2 Таблица</caption>
+        <tr>
+            <td class="first"  colspan="2">1x1</td>
+            <td class="second">1x2</td>
+        </tr>
+        <tr>
+            <td class="second">2x1</td>
+            <td class="first">2x2</td>
+            <td class="second">2x3</td>
+        </tr>
+    </table>
+<div>
+</div>
+<br>
+<div >
+ <h1>Работа с таблицами</h1> <colgroup>
+            <col class="left">
+            <col>
+            <col>
+            <col>
+        </colgroup>
+   <table class="table-second" border="1px">
+     
+        <tr>
+            <td class="left">1x1</td>
+            <td>1x2</td>
+            <td>1x3</td>
+            <td>1x4</td>
+        </tr>
+            
+        <tr>
+            <td class="left">2x1</td>
+            <td>2x2</td>
+            <td>2x3</td>
+            <td>2x4</td>
+        </tr>
+
+        <tr>
+            <td class="left">3x1</td>
+            <td>3x2</td>
+            <td>3x3</td>
+            <td>3x4
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

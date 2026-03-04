@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>Практическая 3</title>
+<style>
+    a:link{
+        color: navy;
+        text-decoration : none;
+    }
+    a:visited{
+        color: purple;
+    }
+    a:hover{
+        color: red;
+        text-decoration: underline;
+    }
+    a:active{
+        color: orange;
+    }
+    #PR1{
+        float: right;
+        line-height: 45px;
+    }
+    #PR2{
+        float: left;
+        line-height: 0px;
+    }
+    details{
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    details .side-content{
+        display: none;
+    }
+    details[open] .side-content{
+        display: inline-block;
+    }
+</style>
+</head>
+<body bgcolor="#f0f8ff" text="#000000">
+< face="Roboto, Arial">
+
+<div align="right">
+<font size="4">
+<a href="lab1.html" id="PR1">Практическая №1</a><br>
+<a href="lab1.2.html" id="PR2">Практическая №2</a>
+</font>
+</div>
+
+<center>
+<font face="Courier New" size="6" color="#2c3e50">
+<h1>Изучаемые предметы</h1>
+</font>
+</center>
+
+<ul type="square">
+<li>Предметы преподаваемые на первом курсе:
+<ul type="circle">
+<li>Математика</li>
+<li>История</li>
+<li>Программирование
+<ul type="disc">
+<li>Теория</li>
+<li>Практика</li>
+</ul>
+</li>
+<li>Химия</li>
+<li>Физика</li>
+<li>География</li>
+</ul>
+</li>
+<li>Предметы преподаваемые на втором курсе</li>
+<li>Предметы преподаваемые на третьем курсе</li>
+</ul>
+
+<center>
+<font face="Courier New" size="5" color="#2c3e50">
+<h2>Специальности</h2>
+</font>
+</center>
+
+<ul>
+<li>
+    <details>
+    <summary>ФИН</summary>
+    <div class="side-content">-Финансы <u><i><b>0603</b></i></u></div>
+</details>
+</li>
+    <li>
+    <details>
+    <Summary>БХ</Summary>
+        <div class="side-content">-Экономика и бухгалтерский учет <u><i><b>0601</b></i></u></div>
+</details>
+</li>
+<Li>
+    <details>
+        <summary>АС</summary>
+        <div class="side-content">-Автоматизированные системы обработки информации и управления<u><i><b>2202</b></i></u></div>
+    </details>
+</Li>
+<li>
+    <details>
+    <summary>ПВ</summary>
+    <div class="side-content">-Правоведение <u><i><b>0201</b></i></u></div>
+</details>
+</li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<hea>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 1-3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-top: 40px;
+        }
+        
+        /* Стили для вложенных списков с символами */
+        .courses ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .courses > ul > li {
+            margin: 10px 0;
+        }
+        
+        /* Символы для разных уровней списка */
+        .level1::before {
+            content: " "; /* Черный ромб */
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .level2::before {
+            content: " "; /* Стрелка */
+            color: #27ae60;
+        }
+        
+        .level3::before {
+            content: " "; /* Белый ромб */
+            color: #9b59b6;
+        }
+        
+        /* Стили для списка специальностей */
+        .specialties {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .specialties dl {
+            display: inline-block;
+            text-align: left;
+        }
+        
+        .specialties dt {
+            font-weight: bold;
+            color: #d35400;
+            margin-top: 10px;
+        }
+        
+        .specialties dd {
+            margin-left: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+    </style>
+<!--
+
+    <h1>Изучаемые предметы</h1>
+    
+    <div class="courses">
+        <ul>
+            <li class="level1">Предметы преподаваемые на первом курсе:
+                <ul>
+                    <li class="level2">Математика</li>
+                    <li class="level2">История</li>
+                    <li class="level2">Программирование
+                        <ul>
+                            <li class="level3">Теория</li>
+                            <li class="level3">Практика</li>
+                        </ul>
+                    </li>
+                    <li class="level2">Химия</li>
+                    <li class="level2">Физика</li>
+                    <li class="level2">География</li>
+                </ul>
+            </li>
+            
+            <li class="level1">Предметы преподаваемые на втором курсе</li>
+            
+            <li class="level1">Предметы преподаваемые на третьем курсе:</li>
+        </ul>
+    </div>
+    
+    <div class="specialties">
+        <h2>Специальности</h2>
+        
+        <dl>
+            <dt>ФИН</dt>
+            <dd>Финансы 0603</dd>
+            
+            <dt>БХ</dt>
+            <dd>Экономика и бухгалтерский учет 0601</dd>
+            
+            <dt>АС</dt>
+            <dd>Автоматизированные системы обработки информации и управления 2202</dd>
+            
+            <dt>ПВ</dt>
+            <dd>Правоведение 0201</dd>
+        </dl>
+    </div>
+
+-->
