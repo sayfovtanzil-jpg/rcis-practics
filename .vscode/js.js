@@ -1,1 +1,2 @@
-alert("You are 18 year")
+var n
+console.log(num_1+num_2);

@@ -1,11 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emily-shop</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Практическая 2: Разработка кода информационных систем</title>
+    <style>
+        /* Общие стили для страницы — фон и базовые отступы */
+        body {
+            background: #eef2f5;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 30px 20px;
+        }
+
+        /* 
+            Каждый блок задания (box_1 … box_5) получает:
+            - внешнюю рамку с закруглением
+            - фоновый цвет (белый для контраста)
+            - внутреннюю тень для лёгкого объёма
+            - отступ снизу для разделения блоков
+        */
+        .box_1, .box_2, .box_3, .box_4, .box_5 {
+            border: 2px solid #2c7da0;      /* спокойный сине-зелёный, заметная граница */
+            border-radius: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;            /* разделение между блоками */
+            transition: box-shadow 0.2s ease;
+        }
+
+        /* лёгкий эффект при наведении — акцент на границах (необязательно, но улучшает восприятие) */
+        .box_1:hover, .box_2:hover, .box_3:hover, .box_4:hover, .box_5:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #1f5068;
+        }
+
+        /* заголовок каждого задания — визуально отделяет описание от сетки */
+        .assignment-header {
+            background: #f8fafc;
+            padding: 12px 20px;
+            border-bottom: 2px dashed #cbd5e1;
+            border-radius: 18px 18px 0 0;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: -0.2px;
+            color: #0b3b4f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assignment-header span {
+            background: #2c7da0;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 40px;
+        }
+
+        /* для небольших экранов заголовок не ломается */
+        @media (max-width: 576px) {
+            .assignment-header {
+                font-size: 1.1rem;
+                padding: 10px 16px;
+            }
+            body {
+                padding: 20px 12px;
+            }
+        }
+
+        /* небольшая дополнительная стилизация для контейнеров внутри блоков,
+           чтобы содержимое выглядело аккуратно (не ломает сетку Bootstrap) */
+        .box_1 .container, .box_2 .container, .box_3 .container,
+        .box_4 .container, .box_5 .container {
+            padding: 1rem 0.75rem 1.2rem 0.75rem;
+        }
+
+        /* исправление для корректного отображения цветных колонок (bg-white вместо bg-wight) */
+        .bg-wight {
+            background-color: #ffffff !important;
+        }
+
+        /* добавим минимальную адаптивность для текста внутри блоков */
+        .row [class^="col-"] {
+            word-break: break-word;
+        }
+    </style>
 </head>
 <body>
-    <h1>Магазин Женской одежды</h1>
+
+    <!-- ===================== ЗАДАНИЕ 1 ===================== -->
+    <div class="box_1">
+        <div class="assignment-header">
+            <span>Задание 1</span> 📐 Базовая сетка (три равные колонки)
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 border border-1 bg-light p-2 text-center">One of the three columns</div>
+                <div class="col-4 border border-1 bg-light p-2 text-center">One of the three columns</div>
+                <div class="col-4 border border-1 bg-light p-2 text-center">One of the three columns</div>
+            </div>
+            <!-- небольшая подсказка о сути задания (оригинальный контент сохранён) -->
+            <div class="mt-2 text-muted small text-center">✨ Равномерное распределение колонок в строке</div>
+        </div>
+    </div>
+
+    <!-- ===================== ЗАДАНИЕ 2 ===================== -->
+    <div class="box_2">
+        <div class="assignment-header">
+            <span>Задание 2</span> 🎯 Центрированный заголовок
+        </div>
+        <div class="container m-0 p-3">
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="display-6 fw-semibold text-primary">HELLO WORLD!!!</h1>
+                    <p class="lead text-secondary">Приветствие, выровненное по центру</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== ЗАДАНИЕ 3 ===================== -->
+    <div class="box_3">
+        <div class="assignment-header">
+            <span>Задание 3</span> 🎨 Разноцветные сетки (многорядная композиция)
+        </div>
+        <div class="container text-center">
+            <!-- Первая строка: 2 половинки -->
+            <div class="row mb-3">
+                <div class="col-6 bg-danger text-white p-2 fw-bold">Первый (6 колонок)</div>
+                <div class="col-6 bg-info text-dark p-2 fw-bold">Второй (6 колонок)</div>
+            </div>
+
+            <!-- Вторая строка: 6 колонок по 2 (в сумме 12) -->
+            <div class="row mb-3">
+                <div class="col-2 bg-danger text-white p-2">Первый</div>
+                <div class="col-2 bg-info text-dark p-2">Второй</div>
+                <div class="col-2 bg-success text-white p-2">Третий</div>
+                <div class="col-2 bg-success text-white p-2">Четвёртый</div>
+                <div class="col-2 bg-white border p-2">Пятый</div>
+                <div class="col-2 bg-dark text-white p-2">Шестой</div>
+            </div>
+
+            <!-- Третья строка: комбинация 3,3,2,2,2 -->
+            <div class="row">
+                <div class="col-3 bg-danger text-white p-2">Первый</div>
+                <div class="col-3 bg-info text-dark p-2">Второй</div>
+                <div class="col-2 bg-danger text-white p-2">Первый</div>
+                <div class="col-2 bg-info text-dark p-2">Второй</div>
+                <div class="col-2 bg-success text-white p-2">Третий</div>
+            </div>
+            <div class="mt-2 text-muted small">✨ Комбинации ширины колонок + цветовые акценты</div>
+        </div>
+    </div>
+
+    <!-- ===================== ЗАДАНИЕ 4 ===================== -->
+    <div class="box_4">
+        <div class="assignment-header">
+            <span>Задание 4</span> 📍 Смещение колонок (offset)
+        </div>
+        <div class="container">
+            <!-- Строка 1: колонка без отступа -->
+            <div class="row mb-3">
+                <div class="col-4 bg-danger text-white p-2 rounded-2 text-center">
+                    Pasha Dembil i Tupoy
+                </div>
+                <div class="col-8 text-secondary small d-flex align-items-center ps-3">
+                    ← Без отступа, стандартное расположение
+                </div>
+            </div>
+            <!-- Строка 2: отступ 4 колонки слева (offset-4) -->
+            <div class="row mb-3">
+                <div class="col-4 offset-4 bg-info text-dark p-2 rounded-2 text-center fw-semibold">
+                    Yusuf Dembil i Tupoy
+                </div>
+                <div class="col-4 text-secondary small d-flex align-items-center">
+                    ← offset-4 (сдвиг на 4 колонки)
+                </div>
+            </div>
+            <!-- Строка 3: отступ 8 колонок (offset-8) -->
+            <div class="row">
+                <div class="col-4 offset-8 bg-success text-white p-2 rounded-2 text-center">
+                    Ashuric Dembil i Tupoy
+                </div>
+                <div class="col-12 text-secondary small mt-2">
+                     offset-8 → блок сдвинут вправо на 8 колонок
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== ЗАДАНИЕ 5 ===================== -->
+    <div class="box_5">
+        <div class="assignment-header">
+            <span>Задание 5</span> Комбинация колонок + смещение (offset)
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-4 bg-secondary bg-opacity-25 p-3 rounded border text-center fw-medium">
+                    fggnd
+                    <div class="small text-muted">левая колонка (4)</div>
+                </div>
+                <div class="col-4 offset-4 bg-primary bg-opacity-10 p-3 rounded border text-center fw-medium">
+                    fgdng
+                    <div class="small text-muted">offset-4 + ширина 4</div>
+                </div>
+            </div>
+            <div class="alert alert-light mt-3 mb-0 py-2 small text-center">
+            Итог: 4 колонки + смещение на 4, суммарно 12. Отличный пример использования offset.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

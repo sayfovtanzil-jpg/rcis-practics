@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);  /* три колонки по 100px */
+  grid-template-rows: repeat(3, 100px);     /* три ряда по 100px */
+  gap: 10px;                                /* промежутки между ячейками */
+}
+
+.block {
+  background-color: #4CAF50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+/* Размещаем блоки по диагонали */
+.block-1 {
+  grid-row: 1;   /* первый ряд */
+  grid-column: 1; /* первая колонка */
+}
+
+.block-2 {
+  grid-row: 2;   /* второй ряд */
+  grid-column: 2; /* вторая колонка */
+}
+
+.block-3 {
+  grid-row: 3;   /* третий ряд */
+  grid-column: 3; /* третья колонка */
+}
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+  <div class="block block-1">1</div>
+  <div class="block block-2">2</div>
+  <div class="block block-3">3</div>
+</div>
+</body>
+</html>
